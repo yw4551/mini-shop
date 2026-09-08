@@ -1,0 +1,32 @@
+.products-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.products-container h1 {
+    margin: 0;
+}
+
+.products-container .search-bar {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 240px;
+    max-width: 360px;
+}
+
+@media (max-width: 700px) {
+    .products-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .products-container .search-bar {
+        max-width: none;
+    }
+}

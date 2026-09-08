@@ -1,0 +1,31 @@
+.search-bar {
+    margin-bottom: 40px;
+}
+
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: 1.5px solid var(--border-color);
+    padding: 12px 4px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    transition: all 0.2 ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.search-bar input::placeholder {
+    color: var(--muted-color);
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    .search-bar input {
+        font-size: 1.05rem;
+    }
+}

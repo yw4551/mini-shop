@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { useFavoritesStore } from "../store/favoritesStore";
+import "../styles/product-list.css";
 
 interface ProductListProps {
     products: Product[];

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import "../styles/search-bar.css";
 
 interface SearchBarProps {
     searchValue: string;

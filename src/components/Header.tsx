@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import "../styles/header.css";
 import { useContext, useEffect } from "react";
 import { useFavoritesStore } from "../store/favoritesStore";
 import { ThemeContext } from "../context/ThemeContext";
 import ThemeToggle from "./ThemeToggle";
+import "../styles/header.css";
 
 function Header() {
     const context = useContext(ThemeContext);

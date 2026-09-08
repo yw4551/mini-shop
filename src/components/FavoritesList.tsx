@@ -2,6 +2,7 @@ import { MdDelete, MdFavorite } from "react-icons/md";
 import { useFavoritesStore } from "../store/favoritesStore";
 import type { Product } from "../types/product";
 import ProductCard from "./ProductCard";
+import "../styles/favorites.css";
 
 interface FavoriteListProps {
     favorites: Product[];

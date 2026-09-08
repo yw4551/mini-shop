@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { Product } from "../types/product";
+import "../styles/product-card.css";
 
 interface ProductsCardProp {
     product: Product;

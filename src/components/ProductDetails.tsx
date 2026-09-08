@@ -2,6 +2,7 @@ import { MdFavorite, MdFavoriteBorder, MdLocalOffer } from "react-icons/md";
 import type { Product } from "../types/product";
 import { Link } from "react-router-dom";
 import { useFavoritesStore } from "../store/favoritesStore";
+import "../styles/product-details.css";
 
 interface ProductDetailsProps {
     product: Product;
