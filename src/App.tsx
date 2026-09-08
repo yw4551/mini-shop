@@ -3,7 +3,7 @@ import Layout from "./layouts/Layout";
 import HomePage from "./pages/HomePage";
 import FavoritesPage from "./pages/FavoritesPage";
 import ProductPage from "./pages/ProductPage";
-import ThemeContextProvider from "./context/ThemeContext";
+import ThemeContextProvider from "./components/ThemeContextProvider";
 
 function App() {
     return (

@@ -9,8 +9,9 @@ interface ProductDetailsProps {
 }
 
 function ProductDetails({ product }: ProductDetailsProps) {
+    const favorites = useFavoritesStore((state) => state.favorites);
     const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite);
-    const isFavorite = useFavoritesStore((state) => state.isFavorite);
+    const isFavorite = favorites.some((p) => p.id === product.id);
 
     return (
         <>
@@ -30,7 +31,7 @@ function ProductDetails({ product }: ProductDetailsProps) {
                             className="add-to-favorites"
                             onClick={() => toggleFavorite(product)}
                         >
-                            {isFavorite(product.id) ? (
+                            {isFavorite ? (
                                 <>
                                     <MdFavorite /> Remove from Favorites
                                 </>

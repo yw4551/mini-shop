@@ -44,12 +44,6 @@
     font-size: 0.95rem;
 }
 
-.product-favorites-cards p:not(.price) {
-    font-family: var(--font-mono);
-    color: var(--accent-color);
-    padding-top: 4px;
-}
-
 .product-favorites-cards .price {
     font-family: var(--font-mono);
     color: var(--accent-color);

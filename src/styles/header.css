@@ -70,6 +70,11 @@ nav {
     transition: all 0.25s ease;
 }
 
+.nav-links a:hover,
+.nav-links a:active {
+    color: var(--text-color);
+}
+
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;

@@ -1,4 +1,5 @@
 import { MdDelete, MdFavorite } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { useFavoritesStore } from "../store/favoritesStore";
 import type { Product } from "../types/product";
 import ProductCard from "./ProductCard";
@@ -19,11 +20,16 @@ function FavoritesList({ favorites }: FavoriteListProps) {
                     <ProductCard product={product}>
                         {(product) => (
                             <div className="card-content">
-                                <img src={product.image} alt={product.title} />
+                                <Link to={`/products/${product.id}`}>
+                                    <img
+                                        src={product.image}
+                                        alt={product.title}
+                                    />
+                                    <p>{product.title}</p>
+                                </Link>
                                 <button onClick={() => toggleFavorite(product)}>
                                     <MdFavorite size={24} />
                                 </button>
-                                <p>{product.title}</p>
                                 <p className="price">${product.price}</p>
                                 <button
                                     className="remove-product"

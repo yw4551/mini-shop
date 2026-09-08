@@ -10,14 +10,14 @@ interface ProductListProps {
 }
 
 function ProductList({ products }: ProductListProps) {
+    const favorites = useFavoritesStore((state) => state.favorites);
     const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite);
-    const isFavorite = useFavoritesStore((state) => state.isFavorite);
 
     return (
         <>
             <ul className="product-grid">
                 {products.map((product) => {
-                    const favorite = isFavorite(product.id);
+                    const favorite = favorites.some((p) => p.id === product.id);
 
                     return (
                         <li key={product.id}>

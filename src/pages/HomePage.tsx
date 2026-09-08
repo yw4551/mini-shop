@@ -9,15 +9,14 @@ function HomePage() {
     const [search, setSearch] = useState("");
     const url = "https://fakestoreapi.com/products";
     const { data, loading, error } = useFetch<Product[]>(url);
-    const products = data ?? [];
 
-    const filteredProducts = useMemo(
-        () =>
-            products.filter((product) =>
-                product.title.toLowerCase().includes(search.toLowerCase()),
-            ),
-        [search, products],
-    );
+    const filteredProducts = useMemo(() => {
+        const products = data ?? [];
+
+        return products.filter((product) =>
+            product.title.toLowerCase().includes(search.toLowerCase()),
+        );
+    }, [search, data]);
 
     if (loading) {
         return <h2>Loading Products...</h2>;

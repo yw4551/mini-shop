@@ -6,6 +6,8 @@ export function useFetch<T>(url: string) {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        let ignore = false;
+
         setLoading(true);
         setError(null);
 
@@ -17,13 +19,24 @@ export function useFetch<T>(url: string) {
 
                 return res.json();
             })
-            .then((data) => setData(data))
-            .catch((err) =>
-                setError(
-                    err instanceof Error ? err.message : "Something went wrong",
-                ),
-            )
-            .finally(() => setLoading(false));
+            .then((data) => {
+                if (!ignore) setData(data);
+            })
+            .catch((err) => {
+                if (!ignore)
+                    setError(
+                        err instanceof Error
+                            ? err.message
+                            : "Something went wrong",
+                    );
+            })
+            .finally(() => {
+                if (!ignore) setLoading(false);
+            });
+
+        return () => {
+            ignore = true;
+        };
     }, [url]);
 
     return { data, loading, error };

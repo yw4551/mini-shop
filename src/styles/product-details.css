@@ -18,13 +18,19 @@
 }
 
 .product-image img {
-    max-width: 420px;
+    max-height: 420px;
     object-fit: contain;
     mix-blend-mode: multiply;
 }
 
 [data-theme="dark"] .product-image img {
     mix-blend-mode: normal;
+}
+
+.product-details-card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .product-details-card h2 {
